@@ -93,3 +93,19 @@ article {
 p {
     margin-top: 20px;
 }
+
+section {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-divider {
+    margin-top: 20px;
+    width: 40%;
+    text-decoration: underline;
+    text-decoration-color: #00ff88;
+}
