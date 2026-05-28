@@ -1,4 +1,4 @@
-﻿export const homeContent = {
+const homeContent = {
   title: 'Daniel Feoktistov',
   subtitle: 'Graduaat Programmeren',
   intro: [
@@ -24,13 +24,13 @@
   ],
 }
 
-export const cvContent = {
+const cvContent = {
   name: 'Daniel Feoktistov',
   role: 'Student Graduaat Programmeren',
   phone: '+32 488 51 49 50',
   email: 'ddamn1020@gmail.com',
   address: 'Gouden Regenstraat 44',
-  cvPdfHref: '/assets/documents/feoktistov_daniel_cv.pdf',
+  cvPdfHref: '/documents/feoktistov_daniel_cv.pdf',
   languages: [
     { name: 'Nederlands', level: 3.5, label: 'Sterk' },
     { name: 'Engels', level: 4.5, label: 'Uitstekend' },
@@ -106,14 +106,14 @@ export const cvContent = {
   ],
 }
 
-export const contactContent = {
+const contactContent = {
   email: 'ddamn1020@gmail.com',
   phone: '+32 488 51 49 50',
   linkedin: 'https://www.linkedin.com/in/daniel-feoktistov-72a16839a/',
   note: 'Gebruik het formulier hieronder om een e-mail op te stellen. Je standaard mailapp opent dan automatisch met jouw onderwerp en bericht ingevuld.',
 }
 
-export const wplSections = [
+const wplSections = [
   {
     course: 'wpl1',
     slug: 'introductie',
@@ -577,14 +577,14 @@ export const wplSections = [
     lead: 'De volledige eindreflectie is als pdf beschikbaar.',
     cta: {
       label: 'Open eindreflectie PDF',
-      href: '/assets/documents/Opdracht_eindreflectie_WPL2_Feoktistov_Daniel.pdf',
+      href: '/documents/Opdracht_eindreflectie_WPL2_Feoktistov_Daniel.pdf',
       external: true,
     },
     html: ``,
   },
 ]
 
-export const primaryNav = [
+const primaryNav = [
   { label: 'Home', to: '/' },
   { label: 'CV', to: '/cv' },
   { label: 'Contact', to: '/contact' },
@@ -592,7 +592,7 @@ export const primaryNav = [
   { label: 'WPL2', to: '/wpl2/case-beschrijving' },
 ]
 
-export const sectionGroups = {
+const sectionGroups = {
   wpl1: {
     label: 'Werkplekleren 1',
     links: wplSections.filter((section) => section.course === 'wpl1'),
@@ -603,6 +603,16 @@ export const sectionGroups = {
   },
 }
 
-export function getSectionByPath(course, slug) {
+function getSectionByPath(course, slug) {
   return wplSections.find((section) => section.course === course && section.slug === slug)
+}
+
+window.PORTFOLIO_DATA = {
+  contactContent,
+  cvContent,
+  getSectionByPath,
+  homeContent,
+  primaryNav,
+  sectionGroups,
+  wplSections,
 }
